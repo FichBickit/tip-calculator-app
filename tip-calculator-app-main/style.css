@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --green-400: hsl(172, 67%, 45%);
+    --green-900: hsl(183, 100%, 15%);
+    --reset-button: rgba(30, 103, 108, 255);
+    --reset-button-hover: rgba(165, 231, 223, 255);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+    --white: hsl(0, 100%, 100%);
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Space Mono", monospace;
+    background-color: var(--grey-200);
+    min-height: 100vh;
+}
+
+.logoDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+.largeContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: auto;
+    width: 53vw;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.tipInfo {
+    padding: 10px 0px 10px 10px;
+    margin-right: 23px;
+}
+
+.billInfo {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.billText {
+    color: var(--grey-500);
+    font-weight: 600;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.billTextDiv {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    font-weight: 600;
+}
+
+#billErrorText {
+    display: none;
+}
+
+.tipAmountDiv {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    font-weight: 600;
+}
+
+#customErrorText {
+    display: none;
+    text-align: right;
+}
+
+.peopleAmountDiv {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    font-weight: 600;
+}
+
+#peopleErrorText {
+    display: none;
+    text-align: right;
+}
+
+.billValueBox {
+    display: flex;
+    align-items: center;
+    background-color: var(--grey-50);
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    outline: none;
+}
+
+.billValueBox:has(#billValue:focus) {
+    border-color: var(--green-400);
+}
+
+#billValue {
+    background-color: var(--grey-50);
+    border: 0px;
+    text-align: end;
+    outline: none;
+    width: 100%;
+    color: var(--green-900);
+}
+
+#billValue::placeholder {
+    text-align: end;
+    color: var(--grey-400);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.selectTip {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.selectTipText {
+    color: var(--grey-500);
+    font-weight: 600;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.fivePercentButton,
+.tenPercentButton,
+.fifteenPercentButton,
+.twentyfivePercentButton,
+.fiftyPercentButton {
+    padding: 7px;
+    width: 100%;
+    height: 45px;
+    border-color: transparent;
+    border-radius: 5px;
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.fivePercentButton:hover,
+.tenPercentButton:hover,
+.fifteenPercentButton:hover,
+.twentyfivePercentButton:hover,
+.fiftyPercentButton:hover {
+    background-color: var(--green-400);
+    color: var(--green-900);
+    transition: 0.2s;
+}
+
+.customValue {
+    width: 100%;
+    height: 44px;
+    outline: none;
+    border: 2px solid transparent;
+    background-color: var(--grey-50);
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--green-900);
+}
+
+.customValue::placeholder {
+    color: var(--grey-500);
+    font-size: 1.6vw;
+}
+
+.customValue:focus {
+    border-color: var(--green-400);
+}
+
+.selectTipButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.peopleInfo {
+    margin-bottom: 30px;
+}
+
+.peopleText {
+    color: var(--grey-500);
+    font-weight: 600;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.peopleAmountBox {
+    display: flex;
+    align-items: center;
+    background-color: var(--grey-50);
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    outline: none;
+}
+
+.peopleAmountBox:has(#peopleAmount:focus) {
+    border-color: var(--green-400);
+}
+
+#peopleAmount {
+    background-color: var(--grey-50);
+    border: 0px;
+    text-align: end;
+    outline: none;
+    width: 100%;
+    color: var(--green-900);
+}
+
+#peopleAmount::placeholder {
+    text-align: end;
+    color: var(--grey-400);
+}
+
+
+.amountBox {
+    background-color: var(--green-900);
+    border-radius: 15px;
+    padding: 40px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.tipAmount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.tipAmountItself {
+    font-size: 14px;
+    color: var(--white);
+}
+
+.tipAmountPerPerson {
+    color: var(--grey-400);
+    font-size: 12px;
+}
+
+.tipAmountValue {
+    font-size: 38px;
+    color: var(--green-400);
+}
+
+.totalAmount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalAmountItself {
+    font-size: 14px;
+    color: var(--white);
+}
+
+.totalAmountPerPerson {
+    color: var(--grey-400);
+    font-size: 12px;
+}
+
+.totalAmountValue {
+    font-size: 38px;
+    color: var(--green-400);
+}
+
+.calcButton {
+    margin-bottom: 10px;;
+}
+
+.calcButton, .resetButton {
+    background-color: var(--reset-button);
+    color: var(--green-900);
+    padding: 10px;
+    font-family: "Space Mono", monospace;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: 0px;
+    width: 100%;
+}
+
+.calcButton:hover, .resetButton:hover {
+    background-color: var(--reset-button-hover);
+    transition: 0.2s;
+}
+
+/* UTILITY CLASSES */
+.default {
+    background-color: var(--green-900);
+    color: var(--white);
+}
+
+.active {
+    background-color: var(--green-400);
+    color: var(--green-900);
+}
+
+.mainButtonStyle {
+    background-color: var(--reset-button);
+}
+
+.buttonHoverStyle {
+    background-color: var(--green-400)
+}
+
+.error{
+    border: 2px solid red;
+    outline: none;
+}
+
+@media only screen and (max-width: 1180px) {
+    .tipAmount {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .totalAmount {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .selectTipButtons {
+        grid-template-columns: 1fr 1fr;
+    }
+    .customValue {
+        width: 100%;
+    }
+    .customValue::placeholder {
+        font-size: 25px;
+    }
+    .main {
+        width: 65vw;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .largeContainer {
+        top: 70px;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 55vw;
+        padding: 20px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .amountBox {
+        margin: 0px;
+        padding: 30px;
+    }
+    .tipAmount {
+        display: flex;
+        padding-bottom: 10px;
+    }
+    .totalAmount {
+        display: flex;
+        padding-bottom: 10px;
+    }
+    .logoDiv {
+        height: 100px;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 595px) {
+    .main {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    .main {
+        width: 100%;
+        margin: 0px;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .tipInfo {
+        margin: 0px;
+        padding: 10px;
+    }
+}
